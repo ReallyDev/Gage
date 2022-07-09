@@ -1,0 +1,8 @@
+{
+    "consumer_key": "lol nope",
+    "consumer_secret": "not getting this",
+    "access_token": "l bozo not this either",
+    "access_token_secret": "L",
+    "timeout_ms": 30000,
+    "strictSSL": true
+}
