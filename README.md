@@ -4,7 +4,7 @@ Description later.
 ```
 MIT License
 
-Copyright (c) 2021 confusion0
+Copyright ©️ 2023-2023 Real_IceyDev#3339
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
