@@ -43,6 +43,8 @@ mongo().then(connection => {
     console.log('MongoDB Connection Established!')
 })
 
+
+
 //Slash command files
 client.slashCommandFiles = walkSync(path.join(__dirname, '/SlashCommands'))
 
@@ -56,7 +58,7 @@ for (const file of client.prerequisiteFiles) {
     prerequisite.run(client);
 }
 
-//Features
+// Features
 client.features = new Collection()
 client.featureFiles = walkSync(path.join(__dirname, '/features'))
 
