@@ -40,7 +40,7 @@ require("./handler")(client);
 const mongo = require('././handler/mongoose')
 
 mongo().then(connection => {
-    console.log('MongoDB Connection Established!')
+    console.log('MongoDB connection successful.')
 })
 
 
@@ -68,7 +68,7 @@ for (const file of client.featureFiles) {
     feature.run(client);
 }
 
-client.login(process.env.Token);
+client.login(process.env.token);
 
 // Made By  Real_IceyDev#3339 //
 // Redistributing Without Permission Is Prohibited //

@@ -1,6 +1,14 @@
 # Gage
 Description later.
 
+Gage is a multi-use bot with over 60 commands still being added each day. Simple as can be, made by an ameture coder. More info coming soon as the bot has just been created!
+
+Questions? Contact me!
+* Discord - **__Real_IceyDev#3339__**
+* Business Email - Pina3Designs@gmail.com
+* Business Phone Number - +1 401-203-8862 *(only works within the United States)*
+
+This GitHub repository uses MIT licensing. View license policy below.
 ```
 MIT License
 

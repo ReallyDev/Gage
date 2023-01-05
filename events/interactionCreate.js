@@ -4,7 +4,7 @@ const command_cooldowns = new Map()
 
 client.on('interactionCreate', async (interaction) => {
     if(interaction.isCommand()) {
-        await interaction.defer({ ephemeral: true }).catch(() => {});
+        await interaction.deferReply({ ephemeral: true }).catch(() => {});
 
         const cmd = client.slashCommands.get(interaction.commandName);
         if(!cmd) return interaction.followUp({ content: 'An error has occured'});
@@ -15,7 +15,7 @@ client.on('interactionCreate', async (interaction) => {
         if(cmd.reqPerm == "BOT_ADMIN" && !client.ADMINS.find(admin => admin.ID === interaction.user.id)) return interaction.editReply("This command is reserved for bot admins only.")
   
         if(cmd.reqPerm != "BOT_ADMIN" && cmd.reqPerm != "NONE" && !interaction.member.permissions.has(cmd.reqPerm)) {
-          if(!client.ADMINS.find(admin => admin.ID === interaction.user.id)) return interaction.editReply(`You need \`${cmd.reqPerm}\` permmision to run this command.`)
+          if(!client.ADMINS.find(admin => admin.ID === interaction.user.id)) return interaction.editReply(`You need \`${cmd.reqPerm}\` permmision to run this command!`)
           else interaction.editReply(`Bot admin detected, bypassed \`${cmd.reqPerm}\` permmisions for ${interaction.user.username}`)
         }
 
