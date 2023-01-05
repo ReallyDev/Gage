@@ -1,7 +1,7 @@
 const { glob } = require("glob");
 const { promisify } = require("util");
-const colors = require('colors')
 const globPromise = promisify(glob);
+const chalk = require("chalk");
 
 module.exports = async (client) => {
     
@@ -12,15 +12,16 @@ module.exports = async (client) => {
     //Commands
     const slashCommands = await globPromise(`${process.cwd()}/SlashCommands/*/*.js`);
     const arrayOfSlashCommands = [];
-
+		console.log(chalk.green.bold("SLASH COMMANDS━━━━━━━━━━━━━━━━━━━┓"));
     slashCommands.map((value) => {
         const file = require(value)
         if (!file?.name) return;
-
         client.slashCommands.set(file.name, file)
-        console.log('Slash Command Loaded ' + file.name)
+        console.log('Slash Command Loaded: ' + file.name)
         arrayOfSlashCommands.push(file)
     });
+	    	console.log(chalk.green.bold("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"));
+	 			console.log("Successfully reloaded application (/) commands.");
 
     //Posting slash commands
     client.on("ready", async () => {

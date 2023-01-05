@@ -4,10 +4,10 @@ const command_cooldowns = new Map()
 
 client.on('interactionCreate', async (interaction) => {
     if(interaction.isCommand()) {
-        await interaction.deferReply({ ephemeral: true }).catch(() => {});
+        await interaction.deferReply({ ephemeral: false }).catch(() => {});
 
         const cmd = client.slashCommands.get(interaction.commandName);
-        if(!cmd) return interaction.followUp({ content: 'An error has occured'});
+        if(!cmd) return interaction.followUp({ content: 'An error has occured', ephemeral: true });
 
         if(!interaction.guild) return
 

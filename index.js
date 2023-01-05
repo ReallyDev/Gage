@@ -38,9 +38,8 @@ require("./handler")(client);
 
 // MongoDB
 const mongo = require('././handler/mongoose')
-
 mongo().then(connection => {
-    console.log('MongoDB connection successful.')
+    console.log('MongoDB primary shard connection successful.')
 })
 
 
