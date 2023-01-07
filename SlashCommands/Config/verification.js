@@ -19,7 +19,7 @@ module.exports = {
             ]
         }
     ],
-    cooldown: 60000,
+    cooldown: 35000,
     reqPerm: "ADMINISTRATOR",
     args: "<options>",
     
@@ -29,9 +29,9 @@ module.exports = {
      * @param {String[]} args
      */
     run: async (client, interaction, args) => {
-        let [ options ] = args
+        let [ toggle ] = args
 
-        if(options === 'On') {
+        if(toggle === 'On') {
             client.gData.set(`${interaction.guild.id}:verification`, 'On')
             
             return interaction.followUp({ content: `${client.emotes.success} | Verification successfully enabled!` })

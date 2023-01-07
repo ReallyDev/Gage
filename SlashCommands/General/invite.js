@@ -1,18 +1,18 @@
-const { CommandInteraction, MessageActionRow, MessageButton, Client } = require('discord.js')
+const { MessageActionRow, MessageButton, SlashCommandBuilder } = require('discord.js')
 
 module.exports = {
-    name: 'invite',
-    description: 'Sends the bots invite link.',
-    cooldown: 5000,
-    reqPerm: "NONE",
-    args: "",
+    	name: 'invite',
+    	description: 'Sends the bots invite link.',
+    	cooldown: 5000,
+    	reqPerm: "NONE",
+    	args: "",
 
     /**
      * @param {Client} client
      * @param {CommandInteraction} message
      * @param {String[]} args
      */
-    run: async (client, interaction, args) => {
+    run: async (interaction) => {
         const button = new MessageActionRow().addComponents(
             new MessageButton()
             .setStyle("LINK")
@@ -21,7 +21,7 @@ module.exports = {
         )
         
         interaction.followUp({ content: `Invite me to your server!`, components: [button] });
-    }
+		}
 }
 
 // Made By  Real_IceyDev#3339 //
