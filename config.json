@@ -1,7 +1,5 @@
 {
     "everyoneMention": false,
     "hostedBy": true,
-    "port": "3000",
-		"clientId": "853993257675259925",
-		"guildId": "1033817150135222342"
+    "port": "3000"
 }

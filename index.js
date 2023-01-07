@@ -24,6 +24,7 @@ const client = new Client({
 module.exports = client;
 
 // Global Variables
+client.slashCommands = new Collection()
 client.config = require("./config.json");
 client.emotes = require('./config/emotes')
 
@@ -44,17 +45,16 @@ mongo().then(connection => {
 
 
 //Slash command files
-client.slashCommands = new Collection()
 client.slashCommandFiles = walkSync(path.join(__dirname, '/SlashCommands'))
 
-// Requirements
-client.requirements = new Collection()
-client.requirementFiles = walkSync(path.join(__dirname, '/requirements'))
+//Prerequisites
+client.prerequisites = new Collection()
+client.prerequisiteFiles = walkSync(path.join(__dirname, '/prerequisites'))
 
-for (const file of client.requirementFiles) {
-    const requirement = require(`${file}`);
-    client.requirements.set(requirement.name, requirement)
-    requirement.run(client);
+for (const file of client.prerequisiteFiles) {
+    const prerequisite = require(`${file}`);
+    client.prerequisites.set(prerequisite.name, prerequisite)
+    prerequisite.run(client);
 }
 
 // Features
@@ -69,5 +69,5 @@ for (const file of client.featureFiles) {
 
 client.login(process.env.token);
 
-// Made By Real_IceyDev#3339 //
+// Made By  Real_IceyDev#3339 //
 // Redistributing Without Permission Is Prohibited //
