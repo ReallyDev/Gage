@@ -7,8 +7,8 @@ module.exports = {
     client.gData = new Keyv(mongooseConnectionStringKeyv, {namespace: 'guilds'})
     client.uData = new Keyv(mongooseConnectionStringKeyv, {namespace: 'users'})
 
-    client.gData.on('error', err => console.error('Keyv guild data connection error:', err));
-    client.uData.on('error', err => console.error('Keyv user data connection error:', err));
+    client.gData.on('error', err => console.log('Keyv guild data connection error:', err));
+    client.uData.on('error', err => console.log('Keyv user data connection error:', err));
   }
 }
 

@@ -2,12 +2,12 @@ const Schema = require('../../models/lockdown');
 const Discord = require('discord.js');
 
 module.exports = {
-    name: 'server',
+    name: 'lockdown',
     description: 'Lockdown or unlockdown the server!',
     options: [
         {
             name: 'options',
-            description: "The options to either lockdown or unlockdown the server",
+            description: "The options to either lockdown or unlockdown the server.",
             type: 'STRING',
             required: true,
             choices: [
@@ -38,11 +38,11 @@ module.exports = {
             Guild: interaction.guild.id,
         });
 
-        if(!data) return interaction.editReply({ content: `${client.emotes.error} You do not have any lockdown channel data yet!`})
+        if(!data) return interaction.editReply({ content: `${client.emotes.error} | You do not have any lockdown data yet!`})
 
 
         if(options === 'Lockdown') {
-            if(data.Lockdown.Enabled) return interaction.editReply({ content: `${client.emotes.error} The server is already locked!` })
+            if(data.Lockdown.Enabled) return interaction.editReply({ content: `${client.emotes.error} | The server is already locked!` })
 
             data.Lockdown.Enabled = true;
 
@@ -55,10 +55,10 @@ module.exports = {
 				});
 		    });
 
-            interaction.followUp({ content: `${client.emotes.success} I have locked up the server!`})
+            interaction.followUp({ content: `${client.emotes.success} | I have locked up the server!`})
             data.save()
         } else {
-            if(!data.Lockdown.Enabled) return interaction.editReply({ content: `${client.emotes.error} The server is already unlockded!` })
+            if(!data.Lockdown.Enabled) return interaction.editReply({ content: `${client.emotes.error} | The server is already unlocked!` })
 
             data.Lockdown.Enabled = false;
 		    const channels = interaction.guild.channels.cache.filter(x => data.Lockdown.Channels.includes(x.id));

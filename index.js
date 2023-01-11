@@ -1,6 +1,7 @@
-const { Discord, Client, Collection } = require("discord.js");
+const { Discord, Client, Collection, DiscordAPIError } = require("discord.js");
 const walkSync = require('./walkSync.js');
 const path = require('path')
+const child = require (`child_process`)
 
 const client = new Client({
     intents: [
@@ -39,9 +40,8 @@ require("./handler")(client);
 // MongoDB
 const mongo = require('././handler/mongoose')
 mongo().then(connection => {
-    console.log('MongoDB primary shard connection successful.')
+    console.log('MongoDB shard connection successful.')
 })
-
 
 
 //Slash command files
@@ -67,6 +67,7 @@ for (const file of client.featureFiles) {
     feature.run(client);
 }
 
+// Login //
 client.login(process.env.token);
 
 // Made By  Real_IceyDev#3339 //

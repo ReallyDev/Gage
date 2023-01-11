@@ -7,6 +7,5 @@ const Schema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model("reactionroles", Schema);
-
 // Made By  Real_IceyDev#3339 //
 // Redistributing Without Permission Is Prohibited //

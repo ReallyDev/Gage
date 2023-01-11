@@ -20,10 +20,13 @@
     "discord.js": "^13.8.1",
     "express": "^4.18.1",
     "glob": "^8.0.3",
+    "ioredis": "^5.2.4",
     "keyv": "^4.5.2",
     "limax": "^3.0.0",
     "mongoose": "^6.8.2",
     "ms": "^2.1.3",
+    "music-info": "^1.2.1",
+    "node-fetch": "^3.3.0",
     "quick.db": "^9.0.5",
     "unorm": "^1.6.0",
     "winston": "^3.8.2"
