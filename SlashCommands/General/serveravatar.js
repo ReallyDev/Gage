@@ -1,12 +1,12 @@
 const { MessageEmbed } = require('discord.js')
 
 module.exports = {
-    name: 'avatar',
-    description: 'Displays the avatar of a user!',
+    name: 'server-avatar',
+    description: 'Displays the avatar of the server!',
     options: [
         {
           name: 'format',
-          description: "The format for the avatar to display in!",
+          description: "The format for the avatar/icon to display in!",
           type: 'STRING',
           required: true,
           choices: [
@@ -27,17 +27,11 @@ module.exports = {
               value: "webp"
             }
           ]
-        },
-        {
-          name: 'user',
-          description: "The user that you want to display the avatar of",
-          type: 'USER',
-          required: false
         }
     ],
     cooldown: 5000,
     reqPerm: "NONE",
-    args: "<format> [user]",
+    args: "<format>",
 
     /**
      * @param {Client} client
@@ -45,19 +39,20 @@ module.exports = {
      * @param {String[]} args
      */
     run: async (client, interaction, args) => {
-        const [ format, member ] = args
-        const guildmember =  interaction.guild.members.cache.get(member) || interaction.member
+        const [ format ] = args
+
+        const guild =  interaction.guild || interaction.guild
         const embed = new MessageEmbed()
           .setColor('0x2F3136')
-          .setTitle(`${guildmember.user.username}'s Avatar`)
+          .setTitle(`${guild.name}'s Icon`)
           .setDescription(
-            `[Avatar Link](${guildmember.user.displayAvatarURL({
+            `[Server Icon Link](${guild.iconURL({
               size: 2048,
               dynamic: true,
               format: format,
             })})`
           )
-          .setImage(guildmember.user.avatarURL({ size: 2048, dynamic: true, format: format }));
+          .setImage(guild.iconURL({ size: 2048, dynamic: true, format: format }));
     
           interaction.editReply({ embeds: [embed] });
     }
