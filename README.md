@@ -1,5 +1,4 @@
 # Gage
-Description later.
 
 Gage is a multi-use bot with over 60 commands still being added each day. Simple as can be, made by an ameture coder. More info coming soon as the bot has just been created!
 
