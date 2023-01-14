@@ -58,7 +58,6 @@ module.exports = {
             })})`
           )
           .setImage(guildmember.user.avatarURL({ size: 2048, dynamic: true, format: format }));
-    
           interaction.editReply({ embeds: [embed] });
     }
 }

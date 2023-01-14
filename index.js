@@ -2,7 +2,9 @@ const { Discord, Client, Collection, DiscordAPIError } = require("discord.js");
 const walkSync = require('./walkSync.js');
 const path = require('path')
 const child = require (`child_process`)
+const colors = require('colors');
 
+// Defining Client //
 const client = new Client({
     intents: [
         "GUILDS",
@@ -43,6 +45,11 @@ mongo().then(connection => {
     console.log('MongoDB shard connection successful.')
 })
 
+// Ratelimit //
+client.on('rateLimit', rateLimitInfo => {
+  console.log('Rate limited! Retry after ${rateLimitInfo.timeout / 1000} seconds.').red.dim;
+  process.exit();
+});
 
 //Slash command files
 client.slashCommandFiles = walkSync(path.join(__dirname, '/SlashCommands'))
