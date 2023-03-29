@@ -28,7 +28,7 @@ module.exports = {
         const home = new MessageEmbed()
         .setColor('0x2F3136')
         .setAuthor(interaction.user.username, interaction.user.displayAvatarURL())
-        .setTitle('Help Panel')
+        .setTitle('Help Panel <:info:993570806833623081>')
         .setDescription(`\`\`\`- [] = optional argument\n- <> = required argument\nYou can use this slash command to find more info on specific commands!\`\`\``)
 
         client.slashCommands.forEach(slashCommand => {
@@ -57,7 +57,7 @@ module.exports = {
             .setLabel("Invite Link"),
             new MessageButton()
             .setStyle("LINK")
-            .setURL("https://discord.gg/5ZdjKf8RKc")
+            .setURL("https://discord.gg/HhjzQhPVFc")
             .setLabel("Support Server Link")
         )
 
