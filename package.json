@@ -30,6 +30,7 @@
     "music-info": "^1.2.1",
     "node-fetch": "^3.3.0",
     "quick.db": "^9.0.5",
+    "undici": "^5.21.0",
     "unorm": "^1.6.0",
     "winston": "^3.8.2"
   }
