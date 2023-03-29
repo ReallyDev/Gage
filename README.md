@@ -1,8 +1,8 @@
-# Gage
+### Gage
 
-Gage is a multi-use bot with over 60 commands still being added each day. Simple as can be, made by an ameture coder. More info coming soon as the bot has just been created!
+Gage is a multi-use bot with lots commands, more still being added each day. Simple as can be, made by an amateur coder. More info to come soon.
 
-Questions? Contact me!
+##Questions? Contact me!
 * Discord - **__Real_IceyDev#3339__**
 * Business Email - Pina3Designs@gmail.com
 * Business Phone Number - +1 401-203-8862 *(only works within the United States)*
@@ -94,4 +94,4 @@ Section 8 – Interpretation.
 	No term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.
 	Nothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.
 ```
-(View Simplified Terms/Learn More)[https://creativecommons.org/licenses/by-nc-nd/4.0]
+#(View Simplified Terms/Learn More)[https://creativecommons.org/licenses/by-nc-nd/4.0]
